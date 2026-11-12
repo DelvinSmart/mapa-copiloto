@@ -19,7 +19,8 @@ conexiones, en 7 zonas, con los cables que las unen.
 | `css/styles.css` | Los colores (como variables, todos arriba), las letras y el diseño. Para cambiar un color se cambia su variable. |
 | `js/datos.js` | **Todo lo que dice el mapa:** las zonas, las placas, los textos, los números y la lista de cables (de dónde a dónde, color, grosor y número). Si cambia un número, se toca solo este archivo. |
 | `js/mapa.js` | Dibuja el mapa a partir de `datos.js` y hace que, al tocar una placa, se resalten sus cables. No tiene textos ni números del mapa. |
-| `descargas/` | El mapa en PNG y en PDF para descargar. |
+| `descargas/` | El mapa en PNG y en PDF para descargar (sacados de la misma página). |
+| `herramientas/medir.py` | Mide los números del mapa en el código de la app. |
 
 ## Cómo funciona
 
@@ -29,6 +30,22 @@ pantalla. Por eso los cables nunca se separan de sus placas: se agrandan y se
 achican juntos.
 
 Las letras son Barlow Condensed y Patrick Hand, de Google Fonts.
+
+## De dónde salen los números
+
+Se midieron en el código de la app el **12/11/2026** (commit `24680b9`) con
+[`herramientas/medir.py`](herramientas/medir.py). Ese programa cuenta los
+archivos, las conexiones (cada archivo que importa a otro) y los cables entre
+grupos. Las listas de texto (pantallas, proveedores, funciones) y las notas de
+abajo se revisaron a mano contra el código, las pruebas y `npm audit`.
+
+Para actualizar el mapa:
+
+```bash
+python3 herramientas/medir.py /ruta/a/copiloto-driver
+```
+
+y se pasan los números nuevos a `js/datos.js`.
 
 ## Cambiar algo
 

@@ -13,7 +13,7 @@ const MAPA = {
   titulo: {
     caja: [130, 36, 1140, 100],
     texto: 'COPILOTO DRIVER — MAPA DE LA APP',
-    subtitulo: '837 archivos · 5.038 conexiones',
+    subtitulo: '780 archivos · 4.619 conexiones',
   },
 
   /*
@@ -67,7 +67,7 @@ const MAPA = {
       titulo: '3. PIEZAS ÚNICAS',
       anchoTitulo: 270,
       lineas: [
-        [152, 640, 'Touchable · Button · Card · GlassFill · OsSectionLabel · OsScrollView · LoadFailedCard · dateFormat · dashSpring (13 resortes)', 20.5],
+        [152, 640, 'Touchable · Button · Card · GlassFill · OsSectionLabel · OsScrollView · LoadFailedCard · dateFormat · dashSpring (17 resortes)', 20.5],
       ],
     },
     {
@@ -80,15 +80,15 @@ const MAPA = {
         {
           id: 'pantallas',
           caja: [335, 850, 265, 250],
-          titulo: 'Pantallas (62)',
-          lineas: ['Início, San, Copiloto,', 'Ganhos, Gastos, Lucro,', 'Metas, Stats, Vehículos,', 'Menú, Registro'],
+          titulo: 'Pantallas (56)',
+          lineas: ['Início, Copiloto, Combustível,', 'Stats, San, Ganhos, Gastos,', 'Lucro, Metas, Vehículos,', 'Registro'],
           tam: 21,
         },
         {
           id: 'componentes',
           caja: [690, 850, 330, 250],
-          titulo: 'Componentes (357)',
-          lineas: ['dashboard 69, os 72,', 'vehicles 37, profile 23,', 'auth 19, vehicle 17,', 'copilot 15, finance 14'],
+          titulo: 'Componentes (316)',
+          lineas: ['os 77, home 57,', 'vehicles 53, auth 18,', 'account 13, finance 12,', 'copilot 11, earnings 11,', 'onboarding 11'],
         },
         { id: 'idiomas', caja: [1100, 850, 150, 250], titulo: 'Idiomas (6)', lineas: ['pt-BR, en, es,', 'fr, de, it'], tam: 21, tamTitulo: 23 },
       ],
@@ -116,10 +116,10 @@ const MAPA = {
       puentes: {
         caja: [150, 1510, 1100, 74],
         lineas: [
-          [170, 1540, 'Puentes: AIEngineBridge · RecurringExpensesBridge · DataCleanupBridge · NotificationResponseBridge'],
-          [170, 1570, 'Control: AppConfigGate'],
+          [170, 1540, 'Puentes: AIEngineBridge · RecurringExpensesBridge · DataCleanupBridge · NotificationResponseBridge · SanNotificationsBridge'],
+          [170, 1570, 'Control: AppConfigGate · Sincronizadores: VehicleTaxAutoSync · TankCapacityPromptSync · MyCompanyNameSync · OwnVehicleColorsSync'],
         ],
-        tam: 21,
+        tam: 18,
       },
     },
     {
@@ -144,7 +144,7 @@ const MAPA = {
         {
           id: 'utilidades',
           caja: [590, 1800, 265, 215],
-          titulo: 'Utilidades y cálculos (103)',
+          titulo: 'Utilidades y cálculos (105)',
           lineas: ['Día fiscal, Ganancias,', 'Gastos, Metas,', 'Vehículo, San'],
           tam: 21,
           tamTitulo: 22,
@@ -175,13 +175,13 @@ const MAPA = {
       placas: [
         { id: 'almacenamiento', caja: [150, 2180, 320, 115], titulo: 'Almacenamiento', lineas: ['Copia local en el teléfono +', '22 archivos de nube'], tam: 20, tamTitulo: 23 },
         { id: 'firebase', caja: [540, 2180, 340, 115], titulo: 'Firebase', lineas: ['Auth, Firestore, Storage,', 'Cloud Functions, Hosting'], tam: 20, tamTitulo: 23 },
-        { id: 'servicios', caja: [950, 2180, 300, 115], titulo: 'Servicios (83)', lineas: ['OCR, Notificaciones, Ubicación,', 'Clima, Sesión, Copia de seguridad'], tam: 18.5, tamTitulo: 23 },
+        { id: 'servicios', caja: [950, 2180, 300, 115], titulo: 'Servicios (85)', lineas: ['OCR, Notificaciones, Ubicación,', 'Clima, Sesión, Copia de seguridad'], tam: 18.5, tamTitulo: 23 },
         {
           id: 'cloudfunctions',
           caja: [150, 2310, 490, 115],
           titulo: 'Cloud Functions',
-          lineas: ['aiCopilot (Gemini), classifyReceiptVision, OTP, Suscripciones,', 'Soporte, Borrado de cuenta, Admin, Costos de IA, Backup'],
-          tam: 17,
+          lineas: ['aiCopilot (Gemini), classifyReceiptVision, OTP, Suscripciones, Soporte,', 'Borrado de cuenta, Admin, Costos de IA, Backup, Fotos y colores de vehículos'],
+          tam: 16,
           tamTitulo: 23,
         },
         { id: 'externos', caja: [710, 2310, 270, 115], titulo: 'Servicios externos', lineas: ['Google Gemini, RevenueCat,', 'Sentry, Twilio'], tam: 20, tamTitulo: 23 },
@@ -201,18 +201,18 @@ const MAPA = {
   cables: [
     { desde: 'panel', hasta: 'motores', color: 'azul', grosor: 6, puntos: [[500, 300], [560, 300]] },
     { desde: 'motores', hasta: 'piezas', color: 'azul', grosor: 6, puntos: [[800, 470], [800, 540]] },
-    { desde: 'componentes', hasta: 'motores', color: 'azul', grosor: 13, puntos: [[960, 850], [960, 700], [1230, 700], [1230, 470]], numero: '582', etiqueta: [1230, 590] },
-    { desde: 'pantallas', hasta: 'motores', color: 'azul', grosor: 5, puntos: [[520, 850], [520, 725], [1150, 725], [1150, 470]], numero: '117', etiqueta: [1150, 590] },
-    { desde: 'pantallas', hasta: 'componentes', color: 'azul', grosor: 11, puntos: [[600, 975], [690, 975]], numero: '509', etiqueta: [645, 936] },
-    { desde: 'componentes', hasta: 'idiomas', color: 'amarillo', grosor: 5, puntos: [[1020, 975], [1100, 975]], numero: '208', etiqueta: [1060, 936] },
-    { desde: 'pantallas', hasta: 'datos', color: 'morado', grosor: 5, puntos: [[450, 1100], [450, 1240]], numero: '143', etiqueta: [450, 1172] },
-    { desde: 'componentes', hasta: 'datos', color: 'morado', grosor: 5, puntos: [[880, 1100], [880, 1240]], numero: '118', etiqueta: [880, 1172] },
-    { desde: 'pantallas', hasta: 'utilidades', color: 'verde', grosor: 5, puntos: [[380, 1100], [380, 1160], [72, 1160], [72, 1660], [650, 1660], [650, 1800]], numero: '135', etiqueta: [72, 1300] },
-    { desde: 'componentes', hasta: 'utilidades', color: 'verde', grosor: 6, puntos: [[800, 1100], [800, 1195], [36, 1195], [36, 1690], [760, 1690], [760, 1800]], numero: '225', etiqueta: [36, 1500] },
-    { desde: 'componentes', hasta: 'servicios', color: 'naranja', grosor: 4, puntos: [[960, 1100], [960, 1165], [1352, 1165], [1352, 2265], [1250, 2265]], numero: '70', etiqueta: [1352, 1700] },
+    { desde: 'componentes', hasta: 'motores', color: 'azul', grosor: 13, puntos: [[960, 850], [960, 700], [1230, 700], [1230, 470]], numero: '505', etiqueta: [1230, 590] },
+    { desde: 'pantallas', hasta: 'motores', color: 'azul', grosor: 5, puntos: [[520, 850], [520, 725], [1150, 725], [1150, 470]], numero: '112', etiqueta: [1150, 590] },
+    { desde: 'pantallas', hasta: 'componentes', color: 'azul', grosor: 11, puntos: [[600, 975], [690, 975]], numero: '510', etiqueta: [645, 936] },
+    { desde: 'componentes', hasta: 'idiomas', color: 'amarillo', grosor: 5, puntos: [[1020, 975], [1100, 975]], numero: '177', etiqueta: [1060, 936] },
+    { desde: 'pantallas', hasta: 'datos', color: 'morado', grosor: 5, puntos: [[450, 1100], [450, 1240]], numero: '137', etiqueta: [450, 1172] },
+    { desde: 'componentes', hasta: 'datos', color: 'morado', grosor: 5, puntos: [[880, 1100], [880, 1240]], numero: '112', etiqueta: [880, 1172] },
+    { desde: 'pantallas', hasta: 'utilidades', color: 'verde', grosor: 5, puntos: [[380, 1100], [380, 1160], [72, 1160], [72, 1660], [650, 1660], [650, 1800]], numero: '132', etiqueta: [72, 1300] },
+    { desde: 'componentes', hasta: 'utilidades', color: 'verde', grosor: 6, puntos: [[800, 1100], [800, 1195], [36, 1195], [36, 1690], [760, 1690], [760, 1800]], numero: '202', etiqueta: [36, 1500] },
+    { desde: 'componentes', hasta: 'servicios', color: 'naranja', grosor: 4, puntos: [[960, 1100], [960, 1165], [1352, 1165], [1352, 2265], [1250, 2265]], numero: '57', etiqueta: [1352, 1700] },
     { desde: 'datos', hasta: 'servicios', color: 'naranja', grosor: 4, puntos: [[1270, 1420], [1308, 1420], [1308, 2215], [1250, 2215]], numero: '78', etiqueta: [1308, 1900] },
     { desde: 'datos', hasta: 'brain', color: 'morado', grosor: 6, puntos: [[480, 1600], [480, 1800]], numero: 'eventos', etiqueta: [480, 1628], especial: true },
-    { desde: 'brain', hasta: 'utilidades', color: 'verde', grosor: 4, puntos: [[520, 1905], [590, 1905]], numero: '21', etiqueta: [555, 1866] },
+    { desde: 'brain', hasta: 'utilidades', color: 'verde', grosor: 4, puntos: [[520, 1905], [590, 1905]], numero: '25', etiqueta: [555, 1866] },
     { desde: 'servicios', hasta: 'firebase', color: 'naranja', grosor: 6, puntos: [[950, 2237], [880, 2237]] },
     { desde: 'cloudfunctions', hasta: 'externos', color: 'verde', grosor: 6, puntos: [[640, 2367], [710, 2367]] },
   ],
@@ -226,8 +226,8 @@ const MAPA = {
       items: [
         '0 botones sueltos',
         '0 ciclos',
-        '0 archivos TypeScript de más de 1.000 líneas',
-        'Pruebas: app 104 · backend 133 · reglas 21 · cartón 61',
+        '0 archivos TypeScript ni Kotlin de más de 1.000 líneas',
+        'Pruebas: app 194 · backend 157 · reglas 23 · cartón 61',
       ],
     },
     {
@@ -235,7 +235,7 @@ const MAPA = {
       caja: [740, 2480, 530, 180],
       titulo: 'PENDIENTE',
       marca: '',
-      items: ['21 proveedores anidados', '2 archivos Kotlin de más de 1.000 líneas', '22 vulnerabilidades moderadas en producción'],
+      items: ['21 proveedores anidados', '3 vulnerabilidades moderadas en producción'],
     },
   ],
 
