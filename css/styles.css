@@ -1,0 +1,382 @@
+/*
+ * styles.css — colores, letras y diseño del mapa.
+ * Los colores están todos aquí arriba, como variables: para cambiar un color,
+ * se cambia solo su variable.
+ */
+:root {
+  /* Fondo y página */
+  --fondo: #161d26;
+  --texto-pagina: #e8eef4;
+  --texto-suave: #aeb9c5;
+
+  /* Título y bandas de zona */
+  --azul-banda: #123a70;
+  --azul-banda-borde: #3f6aa5;
+  --blanco: #ffffff;
+  --subtitulo: #dbe7f7;
+
+  /* Zonas */
+  --zona: #26313e;
+  --zona-borde: #46566a;
+  --zona-texto: #eef2f6;
+
+  /* Placas de metal y tornillos */
+  --placa: #dfe5ea;
+  --placa-borde: #8e9aa7;
+  --placa-titulo: #101820;
+  --placa-texto: #26303a;
+  --tornillo: #8b98a6;
+  --tornillo-borde: #4a5563;
+
+  /* Cables */
+  --azul: #3f9bff;
+  --amarillo: #ffd23f;
+  --morado: #b06bff;
+  --verde: #35c76f;
+  --naranja: #ff9a2e;
+  --cable-borde: #141b23;
+
+  /* Candado, notas y CI */
+  --candado-texto: #201a00;
+  --nota-verde: #a9ec7c;
+  --nota-verde-borde: #5da52f;
+  --nota-verde-texto: #123d05;
+  --nota-amarilla: #ffe27a;
+  --nota-amarilla-borde: #c49a18;
+  --nota-amarilla-texto: #4a3600;
+  --ci: #35c76f;
+  --ci-borde: #1b8a48;
+  --ci-texto: #07301a;
+
+  /* Letras */
+  --letra: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --letra-mano: 'Patrick Hand', 'Comic Sans MS', cursive;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto-pagina);
+  font-family: var(--letra);
+}
+
+/* ---------- barra de arriba ---------- */
+
+.barra {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px 16px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 14px 16px 6px;
+}
+
+.barra-ayuda {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 18px;
+}
+
+.barra-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.boton {
+  appearance: none;
+  border: 1.5px solid var(--zona-borde);
+  border-radius: 999px;
+  background: var(--zona);
+  color: var(--texto-pagina);
+  font: 600 17px var(--letra);
+  padding: 7px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton:hover,
+.boton:focus-visible {
+  border-color: var(--azul);
+}
+
+/* ---------- el mapa ---------- */
+
+.contenedor {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 24px;
+}
+
+.mapa {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* "Ver más grande": el mapa a su tamaño real y se desplaza con el dedo. */
+.contenedor--grande {
+  max-width: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.contenedor--grande .mapa {
+  width: 900px;
+  max-width: none;
+}
+
+/* En pantallas grandes, "más grande" es el tamaño real del lienzo. */
+@media (min-width: 1000px) {
+  .contenedor--grande .mapa {
+    width: 1400px;
+  }
+}
+
+.mapa-fondo {
+  fill: var(--fondo);
+}
+
+.titulo-fondo {
+  fill: var(--azul-banda);
+  stroke: var(--azul-banda-borde);
+  stroke-width: 2;
+}
+
+.titulo-texto {
+  fill: var(--blanco);
+  font-family: var(--letra);
+  font-weight: 700;
+}
+
+.titulo-sub {
+  fill: var(--subtitulo);
+  font-family: var(--letra);
+  font-weight: 500;
+}
+
+.zona {
+  fill: var(--zona);
+  stroke: var(--zona-borde);
+  stroke-width: 3;
+}
+
+.zona-banda {
+  fill: var(--azul-banda);
+}
+
+.zona-titulo {
+  fill: var(--blanco);
+  font-family: var(--letra);
+  font-weight: 700;
+}
+
+.zona-texto {
+  fill: var(--zona-texto);
+  font-family: var(--letra);
+  font-weight: 500;
+}
+
+.tornillo {
+  fill: var(--tornillo);
+  stroke: var(--tornillo-borde);
+  stroke-width: 1.5;
+}
+
+.placa {
+  fill: var(--placa);
+  stroke: var(--placa-borde);
+  stroke-width: 2;
+}
+
+.placa-titulo {
+  fill: var(--placa-titulo);
+  font-family: var(--letra);
+  font-weight: 700;
+}
+
+.placa-texto {
+  fill: var(--placa-texto);
+  font-family: var(--letra);
+  font-weight: 500;
+}
+
+.regleta-linea {
+  stroke: var(--placa-borde);
+  stroke-width: 3;
+}
+
+.regleta-texto,
+.puentes-texto {
+  fill: var(--placa-titulo);
+  font-family: var(--letra);
+  font-weight: 600;
+}
+
+.candado {
+  fill: var(--amarillo);
+}
+
+.candado-texto {
+  fill: var(--candado-texto);
+  font-family: var(--letra);
+  font-weight: 700;
+}
+
+/* ---------- cables ---------- */
+
+.cable--azul { --c: var(--azul); }
+.cable--amarillo { --c: var(--amarillo); }
+.cable--morado { --c: var(--morado); }
+.cable--verde { --c: var(--verde); }
+.cable--naranja { --c: var(--naranja); }
+
+.cable-borde {
+  fill: none;
+  stroke: var(--cable-borde);
+  stroke-linejoin: round;
+}
+
+.cable-linea {
+  fill: none;
+  stroke: var(--c);
+  stroke-linejoin: round;
+}
+
+.cable-puerto {
+  fill: var(--c);
+  stroke: var(--cable-borde);
+  stroke-width: 3;
+}
+
+.cable-flecha {
+  fill: var(--c);
+  stroke: var(--cable-borde);
+  stroke-width: 2;
+}
+
+.etiqueta-fondo {
+  fill: var(--blanco);
+  stroke: var(--cable-borde);
+  stroke-width: 2;
+}
+
+.etiqueta-texto {
+  fill: var(--placa-titulo);
+  font-family: var(--letra);
+  font-weight: 700;
+}
+
+.etiqueta--especial .etiqueta-fondo {
+  fill: var(--morado);
+}
+
+.etiqueta--especial .etiqueta-texto {
+  fill: var(--blanco);
+}
+
+/* ---------- notas y CI ---------- */
+
+.nota--verde {
+  fill: var(--nota-verde);
+  stroke: var(--nota-verde-borde);
+  stroke-width: 2;
+}
+
+.nota--amarillo {
+  fill: var(--nota-amarilla);
+  stroke: var(--nota-amarilla-borde);
+  stroke-width: 2;
+}
+
+.nota-titulo {
+  font-family: var(--letra);
+  font-weight: 700;
+}
+
+.nota-texto {
+  font-family: var(--letra-mano);
+  font-weight: 500;
+}
+
+.nota-titulo--verde { fill: var(--nota-verde-texto); }
+.nota-titulo--amarillo { fill: var(--nota-amarilla-texto); }
+
+.ci {
+  fill: var(--ci);
+  stroke: var(--ci-borde);
+  stroke-width: 2;
+}
+
+.ci-texto {
+  fill: var(--ci-texto);
+  font-family: var(--letra);
+  font-weight: 700;
+}
+
+/* ---------- tocar una placa ---------- */
+
+.tocable {
+  cursor: pointer;
+  outline: none;
+}
+
+.cable,
+.etiqueta,
+.tocable {
+  transition: opacity 0.2s ease;
+}
+
+/* Con algo tocado: lo que no está unido se apaga. */
+.hay-seleccion .cable:not(.activa),
+.hay-seleccion .etiqueta:not(.activa) {
+  opacity: 0.12;
+}
+
+.hay-seleccion .tocable:not(.activa) {
+  opacity: 0.45;
+}
+
+/* Las placas unidas se marcan con un borde del color del candado (solo el
+   borde de afuera: los cuadritos de adentro no). */
+.tocable.activa > .contorno {
+  stroke: var(--amarillo);
+  stroke-width: 5;
+}
+
+.tocable:focus-visible > .contorno {
+  stroke: var(--azul);
+  stroke-width: 5;
+}
+
+.etiqueta.activa .etiqueta-fondo {
+  stroke: var(--amarillo);
+  stroke-width: 4;
+}
+
+/* ---------- pie ---------- */
+
+.pie {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+  color: var(--texto-suave);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cable,
+  .etiqueta,
+  .tocable {
+    transition: none;
+  }
+}

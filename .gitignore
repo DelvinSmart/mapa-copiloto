@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+*.keystore
+*.jks
+*.pem
+*.p12
+*.key
+service-account*.json
+node_modules/
