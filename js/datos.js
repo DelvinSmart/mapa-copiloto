@@ -8,7 +8,7 @@
  * Cajas: [x, y, ancho, alto]. Puntos: [x, y].
  */
 const MAPA = {
-  lienzo: { ancho: 1400, alto: 2790 },
+  lienzo: { ancho: 1400, alto: 2820 },
 
   titulo: {
     caja: [130, 36, 1140, 100],
@@ -33,7 +33,7 @@ const MAPA = {
         [170, 262, 'Tema', 22],
         [170, 288, 'Términos', 22],
         [170, 314, 'Usuarios', 22],
-        [170, 340, 'Vehículos', 22],
+        [170, 340, 'Vehículos, fotos y colores', 22],
         [170, 366, 'Suscripciones', 22],
         [170, 392, 'Costos de IA', 22],
         [170, 418, 'Configuración remota', 22],
@@ -67,7 +67,8 @@ const MAPA = {
       titulo: '3. PIEZAS ÚNICAS',
       anchoTitulo: 270,
       lineas: [
-        [152, 640, 'Touchable · Button · Card · GlassFill · OsSectionLabel · OsScrollView · LoadFailedCard · dateFormat · dashSpring (17 resortes)', 20.5],
+        [152, 622, 'Touchable · Button · Card · GlassFill · OsSectionLabel · OsScrollView · LoadFailedCard · dateFormat · dashSpring (17 resortes)', 20.5],
+        [152, 652, 'LevelBar · RegisterTileGrid · ExpandableTileGrid · ChatInputShell · VehicleCard · geometría del carro (app y panel)', 20.5],
       ],
     },
     {
@@ -96,8 +97,8 @@ const MAPA = {
     {
       id: 'datos',
       caja: [130, 1240, 1140, 360],
-      titulo: '5. DATOS DE LA APP (21 proveedores en cadena)',
-      anchoTitulo: 560,
+      titulo: '5. DATOS DE LA APP (21 proveedores, orden con candado)',
+      anchoTitulo: 640,
       regleta: {
         filas: [
           ['SafeArea', 'UserAccount', 'UserSettings', 'I18n', 'AppConfig', 'AppCurrency', 'AppTheme'],
@@ -116,10 +117,10 @@ const MAPA = {
       puentes: {
         caja: [150, 1510, 1100, 74],
         lineas: [
-          [170, 1540, 'Puentes: AIEngineBridge · RecurringExpensesBridge · DataCleanupBridge · NotificationResponseBridge · SanNotificationsBridge'],
-          [170, 1570, 'Control: AppConfigGate · Sincronizadores: VehicleTaxAutoSync · TankCapacityPromptSync · MyCompanyNameSync · OwnVehicleColorsSync'],
+          [170, 1540, 'Puentes de la IA: AIEngineBridge · RecurringExpenses · DataCleanup · NotificationResponse · SanNotifications'],
+          [170, 1570, 'Puentes de ajustes: VehicleTaxAutoSync · TankCapacityPromptSync · MyCompanyNameSync · OwnVehicleColorsSync · Control: AppConfigGate'],
         ],
-        tam: 18,
+        tam: 19,
       },
     },
     {
@@ -180,7 +181,7 @@ const MAPA = {
           id: 'cloudfunctions',
           caja: [150, 2310, 490, 115],
           titulo: 'Cloud Functions',
-          lineas: ['aiCopilot (Gemini), classifyReceiptVision, OTP, Suscripciones, Soporte,', 'Borrado de cuenta, Admin, Costos de IA, Backup, Fotos y colores de vehículos'],
+          lineas: ['aiCopilot (Gemini), classifyReceiptVision, OTP, Suscripciones, Soporte,', 'Borrado de cuenta, Admin, Costos de IA, Backup, Catálogo y colores'],
           tam: 16,
           tamTitulo: 23,
         },
@@ -220,24 +221,25 @@ const MAPA = {
   notas: [
     {
       tono: 'verde',
-      caja: [130, 2480, 590, 180],
+      caja: [130, 2480, 590, 210],
       titulo: 'ESTADO DE LA REVISIÓN',
       marca: '✓ ',
       items: [
         '0 botones sueltos',
         '0 ciclos',
-        '0 archivos TypeScript ni Kotlin de más de 1.000 líneas',
+        '0 archivos de más de 1.000 líneas (TypeScript y Kotlin)',
+        'Proveedores en una lista, con candado de orden',
         'Pruebas: app 194 · backend 157 · reglas 23 · cartón 61',
       ],
     },
     {
       tono: 'amarillo',
-      caja: [740, 2480, 530, 180],
+      caja: [740, 2480, 530, 210],
       titulo: 'PENDIENTE',
       marca: '',
-      items: ['21 proveedores anidados', '3 vulnerabilidades moderadas en producción'],
+      items: ['3 vulnerabilidades moderadas en producción', '(eran 22; vienen de Expo: glob y minimatch)'],
     },
   ],
 
-  ci: { caja: [130, 2690, 1140, 66], texto: 'CI activa: 5 revisiones en cada subida' },
+  ci: { caja: [130, 2720, 1140, 66], texto: 'CI activa: 5 revisiones en cada subida' },
 };
